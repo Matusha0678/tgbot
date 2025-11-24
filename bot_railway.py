@@ -96,31 +96,172 @@ class TelegramBot:
             command = text[1:].lower()
             
             if command == 'start':
-                self.send_message(chat_id, 
-                    "Привет! Я бот для уведомлений о праздниках.\n\n"
-                    "Я буду предупреждать вас о праздниках за один день до них.\n"
-                    "Используйте /addme чтобы добавить себя в список уведомлений.")
+                welcome_msg = """🎉 *Добро пожаловать в Holiday Bot!*
+
+Я ваш персональный помощник для отслеживания праздников! 
+
+📅 *Что я умею:*
+• Предупреждаю о праздниках за день до них
+• Показываю список всех праздников
+• Рассказываю о праздниках в текущем месяце
+• Отмечаю ближайший праздник
+
+🚀 *Команды:*
+/start - Показать это сообщение
+/addme - Подписаться на уведомления
+/removeme - Отписаться от уведомлений
+/holidays - Все праздники
+/month - Праздники этого месяца
+/next - Ближайший праздник
+/today - Праздники сегодня
+/help - Помощь
+
+✨ Начните с команды /addme чтобы получать уведомления!"""
+                self.send_message(chat_id, welcome_msg, parse_mode='Markdown')
+            
+            elif command == 'help':
+                help_msg = """📚 *Справка по командам:*
+
+/start - Приветствие и информация о боте
+/addme - Подписаться на уведомления о праздниках
+/removeme - Отписаться от уведомлений
+/holidays - Показать полный список всех праздников
+/month - Праздники в текущем месяце
+/next - Ближайший предстоящий праздник
+/today - Праздники на сегодня (если есть)
+/help - Эта справка
+
+⏰ Уведомления приходят за 24 часа до праздника!"""
+                self.send_message(chat_id, help_msg, parse_mode='Markdown')
             
             elif command == 'addme':
                 if chat_id not in USER_CHAT_IDS:
                     USER_CHAT_IDS.append(chat_id)
-                    self.send_message(chat_id, "Вы добавлены в список уведомлений о праздниках!")
+                    msg = """✅ *Отлично!* Вы добавлены в список уведомлений!
+
+Теперь я буду сообщать вам о праздниках за день до их наступления.
+
+🔔 Чтобы отписаться: /removeme"""
                 else:
-                    self.send_message(chat_id, "Вы уже в списке уведомлений.")
+                    msg = """📱 *Вы уже подписаны!* 
+
+Вы уже получаете уведомления о праздниках.
+
+🔔 Чтобы отписаться: /removeme"""
+                self.send_message(chat_id, msg, parse_mode='Markdown')
             
             elif command == 'removeme':
                 if chat_id in USER_CHAT_IDS:
                     USER_CHAT_IDS.remove(chat_id)
-                    self.send_message(chat_id, "Вы удалены из списка уведомлений о праздниках.")
+                    msg = """❌ *Вы отписались* от уведомлений о праздниках.
+
+Чтобы снова подписаться: /addme"""
                 else:
-                    self.send_message(chat_id, "Вас нет в списке уведомлений.")
+                    msg = """📱 *Вы не подписаны* на уведомления.
+
+Чтобы подписаться: /addme"""
+                self.send_message(chat_id, msg, parse_mode='Markdown')
             
             elif command == 'holidays':
-                holiday_list = "📅 Список всех праздников:\n\n"
+                holiday_list = "📅 *Полный список праздников:*\n\n"
+                months = {
+                    '01': 'Январь', '02': 'Февраль', '03': 'Март',
+                    '04': 'Апрель', '05': 'Май', '06': 'Июнь',
+                    '07': 'Июль', '08': 'Август', '09': 'Сентябрь',
+                    '10': 'Октябрь', '11': 'Ноябрь', '12': 'Декабрь'
+                }
+                
                 for date_str, name in sorted(HOLIDAYS.items()):
                     month, day = date_str.split('-')
-                    holiday_list += f"📆 {day}.{month}: {name}\n"
-                self.send_message(chat_id, holiday_list)
+                    month_name = months.get(month, month)
+                    holiday_list += f"📆 {day} {month_name}: {name}\n"
+                
+                self.send_message(chat_id, holiday_list, parse_mode='Markdown')
+            
+            elif command == 'month':
+                current_month = datetime.now().strftime('%m')
+                current_year = datetime.now().year
+                months = {
+                    '01': 'Январь', '02': 'Февраль', '03': 'Март',
+                    '04': 'Апрель', '05': 'Май', '06': 'Июнь',
+                    '07': 'Июль', '08': 'Август', '09': 'Сентябрь',
+                    '10': 'Октябрь', '11': 'Ноябрь', '12': 'Декабрь'
+                }
+                
+                month_holidays = []
+                for date_str, name in HOLIDAYS.items():
+                    month, day = date_str.split('-')
+                    if month == current_month:
+                        month_holidays.append((day, name))
+                
+                month_name = months[current_month]
+                if month_holidays:
+                    msg = f"📅 *Праздники в {month_name} {current_year}:*\n\n"
+                    for day, name in sorted(month_holidays, key=lambda x: int(x[0])):
+                        msg += f"🎊 {day} {month_name}: {name}\n"
+                    msg += f"\n📊 Всего праздников: {len(month_holidays)}"
+                else:
+                    msg = f"📅 *В {month_name} {current_year} нет праздников.*"
+                
+                self.send_message(chat_id, msg, parse_mode='Markdown')
+            
+            elif command == 'next':
+                today = datetime.now()
+                next_holiday = None
+                next_date = None
+                
+                # Check next 365 days
+                for i in range(1, 366):
+                    check_date = today + timedelta(days=i)
+                    date_key = f"{check_date.month:02d}-{check_date.day:02d}"
+                    
+                    if date_key in HOLIDAYS:
+                        next_holiday = HOLIDAYS[date_key]
+                        next_date = check_date
+                        break
+                
+                if next_holiday:
+                    days_until = (next_date - today).days
+                    months = {
+                        '01': 'Января', '02': 'Февраля', '03': 'Марта',
+                        '04': 'Апреля', '05': 'Мая', '06': 'Июня',
+                        '07': 'Июля', '08': 'Августа', '09': 'Сентября',
+                        '10': 'Октября', '11': 'Ноября', '12': 'Декабря'
+                    }
+                    
+                    msg = f"""🎯 *Ближайший праздник:*
+
+🎊 {next_holiday}
+📅 {next_date.day} {months[f"{next_date.month:02d}"]} {next_date.year}
+⏰ Через {days_until} {'день' if days_until == 1 else 'дней' if days_until < 5 else 'дней'}
+
+🔔 Не пропустите! Уведомление придет за день до праздника."""
+                else:
+                    msg = "📅 *В ближайшем году праздников не найдено.*"
+                
+                self.send_message(chat_id, msg, parse_mode='Markdown')
+            
+            elif command == 'today':
+                today = datetime.now()
+                date_key = f"{today.month:02d}-{today.day:02d}"
+                
+                if date_key in HOLIDAYS:
+                    holiday_name = HOLIDAYS[date_key]
+                    msg = f"""🎉 *Сегодня праздник!*
+
+🎊 {holiday_name}
+📅 {today.day} {today.strftime('%B')} {today.year}
+
+🎈 Поздравляю с праздником!"""
+                else:
+                    msg = """📅 *Сегодня праздников нет.*
+
+Но вы можете посмотреть:
+📆 /next - Ближайший праздник
+📊 /month - Праздники этого месяца
+📋 /holidays - Все праздники"""
+                
+                self.send_message(chat_id, msg, parse_mode='Markdown')
 
 def check_holidays(bot):
     """Check for holidays tomorrow and send notifications."""
@@ -129,7 +270,12 @@ def check_holidays(bot):
     
     if tomorrow_key in HOLIDAYS:
         holiday_name = HOLIDAYS[tomorrow_key]
-        message = f"🎉 *Завтра праздник!*\n\n📅 {tomorrow.day:02d}.{tomorrow.month:02d}: {holiday_name}"
+        message = f"""🎉 *Завтра праздник!*
+
+🎊 {holiday_name}
+📅 {tomorrow.day} {tomorrow.strftime('%B')} {tomorrow.year}
+
+⏰ Не пропустите! С наступающим!"""
         
         for chat_id in USER_CHAT_IDS:
             bot.send_message(chat_id, message, parse_mode='Markdown')
