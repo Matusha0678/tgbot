@@ -1,4 +1,5 @@
 import time
+import os
 import logging
 import requests
 import json
@@ -30,8 +31,8 @@ HOLIDAYS = {
 # User chat IDs that will receive notifications (you'll need to add your chat ID)
 USER_CHAT_IDS = []  # Add your chat ID(s) here
 
-# Bot token
-BOT_TOKEN = "8169528152:AAHNdw-NZADGn-C8I_HzRFKAROu0xle_oi0"
+# Bot token from environment variable
+BOT_TOKEN = os.getenv('BOT_TOKEN', '8169528152:AAHNdw-NZADGn-C8I_HzRFKAROu0xle_oi0')
 
 # Enable logging
 logging.basicConfig(
@@ -161,8 +162,8 @@ def main():
             for update in updates:
                 bot.handle_message(update)
             
-            # Check once per minute for holidays
-            time.sleep(60)
+            # Check once per hour for holidays
+            time.sleep(3600)
         except KeyboardInterrupt:
             print("Bot stopped by user")
             break
