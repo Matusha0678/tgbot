@@ -97,12 +97,12 @@ class TelegramBot:
             
             if command == 'start':
                 welcome_msg = """╔══════════════════════════════════════╗
-║     𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙃𝙤𝙡𝙞𝙙𝙖𝙮 𝘽𝙤𝙩!     ║
+║     𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙃𝙤𝙡𝙞𝙙𝙖𝙮 𝘽𝙤𝙩!                                         ║
 ╚══════════════════════════════════════╝
 
 ⟨⟨⟨ 𝙄'𝙢 𝙮𝙤𝙪𝙧 𝙥𝙚𝙧𝙨𝙤𝙣𝙖𝙡 𝙝𝙤𝙡𝙞𝙙𝙖𝙮 𝙩𝙧𝙖𝙘𝙠𝙚𝙧! ⟩⟩⟩
 
-┌─── 𝙒𝙝𝙖𝙩 𝙄 𝙘𝙖𝙣 𝙙� ───┐
+┌─── 𝙒𝙝𝙖𝙩 𝙄 𝙘𝙖𝙣 𝙙𝙩 ───┐
 │ • 𝙉𝙤𝙩𝙞𝙛𝙮 𝙮𝙤𝙪 𝙤𝙛 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙤𝙣𝙚 𝙙𝙖𝙮 𝙞𝙣 𝙖𝙙𝙫𝙖𝙣𝙘𝙚
 │ • 𝙎𝙝𝙤𝙬 𝙖𝙡𝙡 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨
 │ • 𝙏𝙚𝙡𝙡 𝙮𝙤𝙪 𝙖𝙗𝙤𝙪𝙩 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙩𝙝𝙞𝙨 𝙢𝙤𝙣𝙩𝙝
@@ -110,7 +110,7 @@ class TelegramBot:
 └─────────────────────────────────┘
 
 ╔══════════════════════════════════════╗
-║              𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨               ║
+║              𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨              ║
 ╚══════════════════════════════════════╝
 /start - 𝙎𝙝𝙤𝙬 𝙩𝙝𝙞𝙨 𝙢𝙚𝙨𝙨𝙖𝙜𝙚
 /addme - 𝙎𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚 𝙩𝙤 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨
@@ -121,12 +121,12 @@ class TelegramBot:
 /today - 𝙃𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙩𝙤𝙙𝙖𝙮
 /help - 𝙃𝙚𝙡𝙥
 
-⭐ 𝙎𝙩𝙖𝙧𝙩 𝙬𝙞𝙩𝙝 /addme 𝙩𝙤 𝙜𝙚𝙩 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨! ⭐"""
+* 𝙎𝙩𝙖𝙧𝙩 𝙬𝙞𝙩𝙝 /addme 𝙩𝙤 𝙜𝙚𝙩 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨! *"""
                 self.send_message(chat_id, welcome_msg)
             
             elif command == 'help':
                 help_msg = """╔══════════════════════════════════════╗
-║              𝙃𝙚𝙡𝙥 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨              ║
+║              𝙃𝙚𝙡𝙥 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨!                                      ║
 ╚══════════════════════════════════════╝
 
 ┌─────────────────────────────────────┐
@@ -140,76 +140,76 @@ class TelegramBot:
 │ /help   - 𝙏𝙝𝙞𝙨 𝙝𝙚𝙡𝙥 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 │
 └─────────────────────────────────────┘
 
-⏰ 𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 𝙘𝙤𝙢𝙚 24 𝙝𝙤𝙪𝙧𝙨 𝙗𝙚𝙛𝙤𝙧𝙚 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨! ⏰"""
+* 𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 𝙘𝙤𝙢𝙚 24 𝙝𝙤𝙪𝙧𝙨 𝙗𝙚𝙛𝙤𝙧𝙚 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨! *"""
                 self.send_message(chat_id, help_msg)
             
             elif command == 'addme':
                 if chat_id not in USER_CHAT_IDS:
                     USER_CHAT_IDS.append(chat_id)
                     msg = """╔══════════════════════════════════════╗
-║              ✨ �𝙐𝘾𝘾𝙀𝙎𝙎! ✨              ║
+║              * SUCCESS! *                                         ║
 ╚══════════════════════════════════════╝
 
-⟨⟨⟨ �𝙚𝙧𝙛𝙚𝙘𝙩! 𝙔𝙤𝙪'𝙧𝙚 𝙖𝙙𝙙𝙚𝙙 𝙩𝙤 𝙩𝙝𝙚 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝙡𝙞𝙨𝙩! ⟩⟩⟩
+⟨⟨⟨ PERFECT! YOU'RE ADDED TO THE NOTIFICATION LIST! ⟩⟩⟩
 
-┌─── �𝙝𝙖𝙩 𝙝𝙖𝙥𝙥𝙚𝙣𝙨 𝙣𝙤𝙬 ───┐
-│ �𝙤𝙬 𝙄'𝙡𝙡 𝙞𝙣𝙛𝙤𝙧𝙢 𝙮𝙤𝙪 𝙖𝙗𝙤𝙪𝙩 │
-│ 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙤𝙣𝙚 𝙙𝙖𝙮 𝙗𝙚𝙛𝙤𝙧𝙚 │
-│ 𝙩𝙝𝙚𝙞𝙧 𝙖𝙧𝙧𝙞𝙫𝙖𝙡! │
+┌─── WHAT HAPPENS NOW ───┐
+│ NOW I'LL INFORM YOU ABOUT │
+│ HOLIDAYS ONE DAY BEFORE │
+│ THEIR ARRIVAL! │
 └─────────────────────────────┘
 
-🔧 𝙏𝙤 𝙪𝙣𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚: /removeme"""
+* TO UNSUBSCRIBE: /removeme *"""
                 else:
                     msg = """╔══════════════════════════════════════╗
-║              ⚠️ 𝙄𝙉𝙁𝙊 ⚠️              ║
+║              ! INFO !                                             ║
 ╚══════════════════════════════════════╝
 
-⟨⟨⟨ 𝙔𝙤𝙪'𝙧𝙚 𝙖𝙡𝙧𝙚𝙖𝙙𝙮 𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚𝙙! ⟩⟩⟩
+⟨⟨⟨ YOU'RE ALREADY SUBSCRIBED! ⟩⟩⟩
 
-┌─── 𝙔𝙤𝙪𝙧 𝙨𝙩𝙖𝙩𝙪𝙨 ───┐
-│ 𝙔𝙤𝙪'𝙧𝙚 𝙖𝙡𝙧𝙚𝙖𝙙𝙮 𝙧𝙚𝙘𝙚𝙞𝙫𝙞𝙣𝙜 │
-│ 𝙝𝙤𝙡𝙞𝙙𝙖𝙮 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 │
-│ 𝙤𝙣𝙚 𝙙𝙖𝙮 𝙞𝙣 𝙖𝙙𝙫𝙖𝙣𝙘𝙚! │
+┌─── YOUR STATUS ───┐
+│ YOU'RE ALREADY RECEIVING │
+│ HOLIDAY NOTIFICATIONS │
+│ ONE DAY IN ADVANCE! │
 └─────────────────────┘
 
-🔧 𝙏𝙤 𝙪𝙣𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚: /removeme"""
+* TO UNSUBSCRIBE: /removeme *"""
                 self.send_message(chat_id, msg)
             
             elif command == 'removeme':
                 if chat_id in USER_CHAT_IDS:
                     USER_CHAT_IDS.remove(chat_id)
                     msg = """╔══════════════════════════════════════╗
-║             ✅ �𝙉𝙎𝙐𝘽𝙎𝘾𝙍𝙄𝘽𝙀𝘿 ✅            ║
+║             + UNSUBSCRIBED +                                      ║
 ╚══════════════════════════════════════╝
 
-⟨⟨⟨ �𝙤𝙪'𝙫𝙚 𝙪𝙣𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚𝙙 𝙛𝙧𝙤𝙢 𝙝𝙤𝙡𝙞𝙙𝙖𝙮 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 ⟩⟩⟩
+⟨⟨⟨ YOU'VE UNSUBSCRIBED FROM HOLIDAY NOTIFICATIONS ⟩⟩⟩
 
-┌─── �𝙤𝙧𝙧𝙮 𝙩𝙤 𝙨𝙚𝙚 𝙮𝙤𝙪 𝙜𝙤 ───┐
-│ 𝙔𝙤𝙪 𝙬𝙤𝙣'𝙩 𝙧𝙚𝙘𝙚𝙞𝙫𝙚 │
-│ 𝙝𝙤𝙡𝙞𝙙𝙖𝙮 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 │
-│ 𝙖𝙣𝙮𝙢𝙤𝙧𝙚! │
+┌─── SORRY TO SEE YOU GO ───┐
+│ YOU WON'T RECEIVE │
+│ HOLIDAY NOTIFICATIONS │
+│ ANYMORE! │
 └───────────────────────┘
 
-🔧 �𝙤 𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚 𝙖𝙜𝙖𝙞𝙣: /addme"""
+* TO SUBSCRIBE AGAIN: /addme *"""
                 else:
                     msg = """╔══════════════════════════════════════╗
-║              ❌ 𝙀𝙍𝙍𝙊𝙍 ❌              ║
+║              X ERROR X                                            ║
 ╚══════════════════════════════════════╝
 
-⟨⟨⟨ 𝙔𝙤𝙪'𝙧𝙚 𝙣𝙤𝙩 𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚𝙙 𝙩𝙤 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 ⟩⟩⟩
+⟨⟨⟨ YOU'RE NOT SUBSCRIBED TO NOTIFICATIONS ⟩⟩⟩
 
-┌─── 𝙔𝙤𝙪𝙧 𝙘𝙪𝙧𝙧𝙚𝙣𝙩 𝙨𝙩𝙖𝙩𝙪𝙨 ───┐
-│ 𝙔𝙤𝙪'𝙧𝙚 𝙣𝙤𝙩 𝙧𝙚𝙘𝙚𝙞𝙫𝙞𝙣𝙜 │
-│ 𝙖𝙣𝙮 𝙝𝙤𝙡𝙞𝙙𝙖𝙮 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨 │
-│ 𝙧𝙞𝙜𝙝𝙩 𝙣𝙤𝙬 │
+┌─── YOUR CURRENT STATUS ───┐
+│ YOU'RE NOT RECEIVING │
+│ ANY HOLIDAY NOTIFICATIONS │
+│ RIGHT NOW │
 └───────────────────────────┘
 
-🔧 𝙏𝙤 𝙨𝙪𝙗𝙨𝙘𝙧𝙞𝙗𝙚: /addme"""
+* TO SUBSCRIBE: /addme *"""
                 self.send_message(chat_id, msg)
             
             elif command == 'holidays':
                 holiday_list = """╔══════════════════════════════════════╗
-║           𝙁𝙪𝙡𝙡 𝙡𝙞𝙨𝙩 𝙤𝙛 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨           ║
+║           𝙁𝙪𝙡𝙡 𝙡𝙞𝙨𝙩 𝙤𝙛 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨                                          ║
 ╚══════════════════════════════════════╝
 
 """
@@ -223,7 +223,7 @@ class TelegramBot:
                 for date_str, name in sorted(HOLIDAYS.items()):
                     month, day = date_str.split('-')
                     month_name = months.get(month, month)
-                    holiday_list += f"┌───── 📅 {day} {month_name} ─────┐\n"
+                    holiday_list += f"┌───── DATE {day} {month_name} ─────┐\n"
                     holiday_list += f"│ {name} │\n"
                     holiday_list += f"└─────────────────────────┘\n\n"
                 
@@ -248,25 +248,25 @@ class TelegramBot:
                 month_name = months[current_month]
                 if month_holidays:
                     msg = f"""╔══════════════════════════════════════╗
-║     𝙃𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙞𝙣 {month_name} {current_year}     ║
+║     𝙃𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙞𝙣 {month_name} {current_year}                        ║
 ╚══════════════════════════════════════╝
 
 """
                     for day, name in sorted(month_holidays, key=lambda x: int(x[0])):
-                        msg += f"┌───── 📅 {day} {month_name} ─────┐\n"
+                        msg += f"┌───── DATE {day} {month_name} ─────┐\n"
                         msg += f"│ {name} │\n"
                         msg += f"└─────────────────────────┘\n\n"
-                    msg += f"┌─── 📊 𝙎𝙩𝙖𝙩𝙞𝙨𝙩𝙞𝙘� ───┐\n"
-                    msg += f"│ �𝙤𝙩𝙖𝙡 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨: {len(month_holidays)} │\n"
+                    msg += f"┌─── STATS ───┐\n"
+                    msg += f"│ TOTAL HOLIDAYS: {len(month_holidays)} │\n"
                     msg += f"└─────────────────────┘"
                 else:
                     msg = f"""╔══════════════════════════════════════╗
-║         𝙉𝙤 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙞𝙣 {month_name} {current_year}         ║
+║         𝙉𝙤 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙞𝙣 {month_name} {current_year}                 ║
 ╚══════════════════════════════════════╝
 
-┌─── 📅 𝘾𝙖𝙡𝙚𝙣𝙙𝙖𝙧 ───┐
-│ 𝙏𝙝𝙞𝙨 𝙢𝙤𝙣𝙩𝙝 𝙞𝙨 │
-│ 𝙝𝙤𝙡𝙞𝙙𝙖𝙮-𝙛𝙧𝙚𝙚! │
+┌─── CALENDAR ───┐
+│ THIS MONTH IS │
+│ HOLIDAY-FREE! │
 └─────────────────┘"""
                 
                 self.send_message(chat_id, msg)
@@ -295,31 +295,31 @@ class TelegramBot:
                     }
                     
                     msg = f"""╔══════════════════════════════════════╗
-║                𝙉𝙚𝙭𝙩 𝙝𝙤𝙡𝙞𝙙𝙖𝙮                ║
+║                 𝙉𝙚𝙭𝙩 𝙝𝙤𝙡𝙞𝙙𝙖𝙮                                      ║
 ╚══════════════════════════════════════╝
 
-┌───── ⭐ 𝙃𝙞𝙜𝙝𝙡𝙞𝙜𝙝𝙩 ─────┐
+┌───── STAR ─────┐
 │ {next_holiday} │
-└─────────────────────┘
+└─────────────────┘
 
-┌─── 📅 𝘿𝙖𝙩𝙚 ───┐
+┌─── DATE ───┐
 │ {next_date.day} {months[f"{next_date.month:02d}"]} {next_date.year} │
 └───────────────┘
 
-┌─── ⏰ 𝘾𝙤𝙪𝙣𝙩�𝙤𝙬𝙣 ───┐
-│ �𝙣 {days_until} {'𝙙𝙖𝙮' if days_until == 1 else '𝙙𝙖𝙮𝙨'} │
+┌─── COUNTDOWN ───┐
+│ IN {days_until} {'DAY' if days_until == 1 else 'DAYS'} │
 └─────────────────┘
 
-⭐ 𝘿𝙤𝙣'𝙩 𝙢𝙞𝙨𝙨 𝙞𝙩! 𝙉𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝙘𝙤𝙢𝙚𝙨 𝙤𝙣𝙚 𝙙𝙖𝙮 𝙗𝙚𝙛𝙤𝙧𝙚! ⭐"""
+* DONT MISS IT! NOTIFICATION COMES ONE DAY BEFORE! *"""
                 else:
                     msg = """╔══════════════════════════════════════╗
-║            𝙉𝙤 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙛𝙤𝙪𝙣𝙙            ║
+║            𝙉𝙤 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙛𝙤𝙪𝙣𝙙                                     ║
 ╚══════════════════════════════════════╝
 
-┌─── 📅 𝘾𝙖𝙡𝙚𝙣𝙙𝙖𝙧 ───┐
-│ 𝙉𝙤 �𝙤𝙡�𝙙�𝙮𝙨 │
-│ 𝙞� 𝙩𝙝𝙚 𝙣𝙚𝙭𝙩 │
-│ 𝙮𝙚𝙖𝙧! │
+┌─── CALENDAR ───┐
+│ NO HOLIDAYS │
+│ IN THE NEXT │
+│ YEAR! │
 └─────────────────┘"""
                 
                 self.send_message(chat_id, msg)
@@ -331,37 +331,37 @@ class TelegramBot:
                 if date_key in HOLIDAYS:
                     holiday_name = HOLIDAYS[date_key]
                     msg = f"""╔══════════════════════════════════════╗
-║                🎉 𝙃������! 🎉                ║
+║                HOLIDAY!                                            ║
 ╚══════════════════════════════════════╝
 
-┌───── ⭐ 𝘾𝙚𝙡���𝙖�𝙞𝙤𝙣 ─────┐
+┌───── STAR ─────┐
 │ {holiday_name} │
-└─────────────────────┘
+└─────────────────┘
 
-┌─── 📅 𝘿𝙖𝙩𝙚 ───┐
+┌─── DATE ───┐
 │ {today.day} {today.strftime('%B')} {today.year} │
 └───────────────┘
 
-┌─── 🎊 𝙒𝙞𝙨𝙝𝙚� ───┐
-│ �𝙖𝙥𝙥𝙮 𝙝𝙤𝙡𝙞𝙙𝙖𝙮! │
-│ 𝙀𝙣𝙟𝙤𝙮 𝙩𝙝𝙚 │
-│ 𝙘𝙚𝙡𝙚𝙗𝙧𝙖𝙩𝙞𝙤𝙣! │
+┌─── WISHES ───┐
+│ HAPPY HOLIDAY! │
+│ ENJOY THE │
+│ CELEBRATION! │
 └─────────────────┘"""
                 else:
                     msg = """╔══════════════════════════════════════╗
-║           📅 𝙉𝙤 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙩𝙤𝙙𝙖𝙮           ║
+║           NO HOLIDAYS TODAY                                       ║
 ╚══════════════════════════════════════╝
 
-┌─── 📅 𝘾𝙖𝙡𝙚𝙣��𝙧 ───┐
-│ 𝙍𝙚𝙜�𝙡𝙖𝙧 𝙙𝙖𝙮 │
-│ 𝙣𝙤 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 │
-│ 𝙩𝙤𝙙𝙖𝙮 │
+┌─── CALENDAR ───┐
+│ REGULAR DAY │
+│ NO HOLIDAYS │
+│ TODAY │
 └─────────────────┘
 
-┌─── 🔍 �𝙝𝙖� 𝙮𝙤𝙪 𝙘𝙖𝙣 𝙘𝙝𝙚𝙘𝙠 ───┐
-│ 📅 /next - 𝙉𝙚𝙭𝙩 𝙝𝙤𝙡𝙞𝙙𝙖𝙮 │
-│ 📊 /month - 𝙃𝙤𝙡𝙞𝙙𝙖𝙮𝙨 𝙩𝙝𝙞𝙨 𝙢𝙤𝙣𝙩𝙝 │
-│ 📋 /holidays - 𝘼𝙡𝙡 𝙝𝙤𝙡𝙞𝙙𝙖𝙮𝙨 │
+┌─── WHAT YOU CAN CHECK ───┐
+│ /next - NEXT HOLIDAY │
+│ /month - HOLIDAYS THIS MONTH │
+│ /holidays - ALL HOLIDAYS │
 └───────────────────────────┘"""
                 
                 self.send_message(chat_id, msg)
@@ -374,30 +374,32 @@ def check_holidays(bot):
     if tomorrow_key in HOLIDAYS:
         holiday_name = HOLIDAYS[tomorrow_key]
         message = f"""╔══════════════════════════════════════╗
-║            🔔 𝙃𝙊𝙇𝙄𝘿𝘼𝙔 𝘼𝙇𝙀𝙍�! 🔔            ║
+║            BELL HOLIDAY ALERT!                             ║
 ╚══════════════════════════════════════╝
 
-┌───── ⚡ 𝙃𝙤𝙡𝙞𝙙𝙖𝙮 𝘼𝙡𝙚𝙧𝙩 ─────┐
-│ 𝙃�𝙤𝙡𝙞𝙙𝙖𝙮 𝙩𝙤𝙢𝙤𝙧𝙧𝙤𝙬! │
+┌───── LIGHTNING ─────┐
+│ HOLIDAY TOMORROW! │
 └─────────────────────┘
 
-┌───── ⭐ 𝘾𝙚𝙡𝙚𝙗𝙧𝙖𝙩𝙞𝙤𝙣 ─────┐
+┌───── STAR ─────┐
 │ {holiday_name} │
-└─────────────────────┘
+└─────────────────┘
 
-┌─── 📅 𝘿𝙖𝙩𝙚 ───┐
+┌─── DATE ───┐
 │ {tomorrow.day} {tomorrow.strftime('%B')} {tomorrow.year} │
 └───────────────┘
 
-┌─── ⚡ 𝙍𝙚𝙢𝙞𝙣𝙙𝙚𝙧 ───┐
-│ 𝘿𝙤𝙣'𝙩 𝙢𝙞𝙨𝙨 𝙞𝙩! │
-│ 𝙃𝙖𝙥𝙥𝙮 𝙖𝙙𝙫𝙖𝙣𝙘𝙚! │
-│ 𝘽𝙚 𝙥𝙧𝙚𝙥𝙖��𝙚𝙙! │
+┌─── LIGHTNING ───┐
+│ DONT MISS IT! │
+│ HAPPY ADVANCE! │
+│ BE PREPARED! │
 └─────────────────┘"""
         
         for chat_id in USER_CHAT_IDS:
             bot.send_message(chat_id, message)
             logger.info(f"Sent holiday notification to {chat_id}")
+    else:
+        pass
 
 def main():
     """Start the bot."""
